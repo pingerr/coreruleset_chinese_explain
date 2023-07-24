@@ -2,18 +2,21 @@
 # - https://github.com/lightos/Panoptic
 # - https://github.com/danielmiessler/SecLists
 # /proc and /sys entries should be kept in sync with restricted-files.data
+# /proc和/sys条目应与restricted-files.data保持同步
 
 # Entries in this list generally use the shortest path that suffices for identifying them as dangerous.
+# 此列表中的条目通常使用足够识别其为危险的最短路径。
 # .ssh/id_rsa and .ssh/id_dsa for example, are both dangerous paths but are represented in this list as .ssh.
 # The same applies to different log files below /var/log/mysql: var/log/mysql is enough to tell us that the request is suspicious.
+# 对于/var/log/mysql下的不同日志文件也是如此：var/log/mysql足以告诉我们该请求是可疑的。
 # Additionally, similar paths with different roots are represented as a single entry.
-# For example, the two entries usr/local/mysql/data/mysql.err and xampp/mysql/data/mysql.err are
-# represented as mysal/data, as that is enough to identify the paths as being suspicious.
+# 此外，具有不同根源的相似路径被表示为单个条目。
+# 例如，两个条目usr/local/mysql/data/mysql.err和xampp/mysql/data/mysql.err被表示为mysal/data，因为这足以识别路径是可疑的。
 
 
 # Most of the dotfile entries can be generated from the following three commands.
-# Unfortunately, the output contains many more entries, including some file
-# extensions. There are also some entries that probably added by hand.
+# 大多数点文件条目可以从以下三个命令生成。
+# 很不幸，输出结果包含了许多更多的条目，包括一些文件扩展名。还有一些条目可能是手动添加的。
 # curl -s https://raw.githubusercontent.com/lightos/Panoptic/master/home.txt | grep -E "^\." |  awk  '{ print tolower($0) }' | sort | uniq
 # curl -s https://raw.githubusercontent.com/lightos/Panoptic/master/cases.xml | grep "file value" | cut -d'"' -f2 | grep -E "^\." |  awk  '{ print tolower($0) }' | sort | uniq
 # curl -s https://raw.githubusercontent.com/danielmiessler/SecLists/master/Fuzzing/fuzz-Bo0oM.txt | grep -Ev '\\|\.\.|=\b|%' | grep -E "^\." |  awk  '{ print tolower($0) }' | sort | uniq
@@ -107,6 +110,7 @@
 /tmp/
 
 # Apache httpd entries can be generated with the following command:
+# 可以使用以下命令生成 Apache httpd 条目：
 # curl -s https://raw.githubusercontent.com/lightos/Panoptic/master/cases.xml | grep "file value" | cut -d'"' -f2 | awk -F/ '{ { if (length($NF) > 0) {v1 = NF-1; v2 = NF} else {v1 = NF-2; v2 = NF-1} print tolower($v1"/"$v2) }) }' | grep apache | sort | uniq
 apache/access.conf
 apache/apache.conf

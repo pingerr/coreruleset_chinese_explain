@@ -4,6 +4,7 @@
 .htdigest
 .htpasswd
 # home level dotfiles (keep in sync with lfi-os-files.data)
+# 主目录级别的配置文件（与lfi-os-files.data保持同步）
 # grep -E '^\.' lfi-os-files.data
 .addressbook
 .aptitude/config
