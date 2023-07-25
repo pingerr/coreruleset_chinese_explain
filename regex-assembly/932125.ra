@@ -3,20 +3,20 @@
 
 ##! Word list for rule 932125 (RCE Windows command injection - PowerShell aliases)
 ##!
+##! 这个列表来自于PowerShell源代码
 ##! This list comes from the powershell source code. Can be updated using this oneliner:
 ##! curl -s https://raw.githubusercontent.com/PowerShell/PowerShell/master/src/System.Management.Automation/engine/InitialSessionState.cs -o - | awk -F\" '/new SessionStateAliasEntry\("/ { print $2; }'
-##! To prevent some FP for a command, you can require command parameters
-##! after a command. Only do this if the command regularly causes FP and if
-##! allowing the bare command (without parameters) is not too dangerous.
-##! (Note: due to \b following the regexp, a word boundary is also required
-##! further on, so some letter/number is needed for a match). Example:
-##!
+##! To prevent some FP for a command, you can require command parameters after a command. Only do this if the command regularly causes FP and if
+allowing the bare command (without parameters) is not too dangerous.
+##！为了防止误报，可以在命令之后要求命令参数。只有在经常引起误报并且允许不带参数的裸命令不太危险时才这样做。
+##! (Note: due to \b following the regexp, a word boundary is also required further on, so some letter/number is needed for a match). Example:
+##! 由于在正则表达式之后，还需要一个词边界，因此需要一些字母/数字进行匹配。
 ##!   diff@
 
 ##!+ i
 
-##! Note: the quoting prefixes are part of the command prefixes, except for ^
-##!       which, for unknown reasons, is not part of the expression
+##! Note: the quoting prefixes are part of the command prefixes, except for ^ which, for unknown reasons, is not part of the expression
+##! 注意：引用前缀是命令前缀的一部分，除了^之外，由于未知原因，它不是表达式的一部分。
 
 ##! extension/switches suffix
 ##! cmd.com, cmd.exe, etc.
@@ -46,7 +46,7 @@
   `
   ##!=>
 
-  ##! match possible white space between prefix expressions
+  ##! match possible white space between prefix expressions 匹配前缀表达式之间可能的空格
   \s*
   ##!=>
 

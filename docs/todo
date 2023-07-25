@@ -1,4 +1,9 @@
+crs 前置知识
+    phase阶段
+    常见var定义
 
+
+漏洞攻防原理
 protocol attack
     #
     # -=[ LDAP Injection ]=-
@@ -19,3 +24,14 @@ lfi
 
 rfi
 
+RCE
+
+php
+
+SSRF
+
+XSS
+
+SQLi
+
+Session fixation

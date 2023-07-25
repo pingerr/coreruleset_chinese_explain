@@ -3,7 +3,7 @@
 # https://www.php.net/manual/en/language.variables.superglobals.php
 # https://www.php.net/manual/en/language.constants.predefined.php
 
-#  These superglobal variables are:
+#  These superglobal variables are: 这些超全局变量包括：
 $GLOBALS
 $_COOKIE
 $_ENV
@@ -19,7 +19,7 @@ $http_​response_​header
 # Deprecated
 $php_​errormsg
 
-# This is really old, completely deprecated vars (PHP >= 4 < 5.3)
+# This is really old, completely deprecated vars (PHP >= 4 < 5.3) 这是非常老的、完全弃用的变量(PHP >= 4 < 5.3)。
 $HTTP_COOKIE_VARS
 $HTTP_ENV_VARS
 $HTTP_GET_VARS

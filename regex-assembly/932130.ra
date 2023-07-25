@@ -8,6 +8,8 @@
 \$\(\(.*\)\)
 
 ##! Find wordlist bypasses using [ ] glob characters, like: /e[t]c
+##! 使用[ ]通配符查找绕过单词列表，例如：/e[t]c
 ##! Require a / in front to prevent false positives like [text in brackets]
+##! 需要在前面加上 / 以防止误判，例如 [方括号中的文本]
 /\w*\[!.+\]
 /\w*\[.+\]

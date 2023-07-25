@@ -1,10 +1,9 @@
 ##! Please refer to the documentation at
 ##! https://coreruleset.org/docs/development/regex_assembly/.
 
-##! This assembly file generates a prefix match for unix shell RCE
-##! evasions. Command words, in this case, must folow the prefix.
-##! Separate rules target commands that do not follow this prefix,
-##! as the chance of false positives is higher without a prefix match.
+##! This assembly file generates a prefix match for unix shell RCE evasions. Command words, in this case, must folow the prefix.
+##! 这个汇编文件用于生成Unix shell RCE 绕过的前缀匹配。指令词在这种情况下必须遵循该前缀。
+##! 没有前缀，就可能会误判。
 
 ##! time ifconfig
 ##!> cmdline unix
@@ -42,7 +41,7 @@
 \(\s*\)
 ##!=>
 
-##! match possible white space between prefix expressions
+##! match possible white space between prefix expressions 匹配前缀表达式中可能存在的空格
 \s*
 ##!=>
 

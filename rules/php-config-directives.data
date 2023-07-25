@@ -3,27 +3,30 @@
 # - https://www.php.net/manual/en/ini.list.php
 #
 # There are additional directives defined in some of the modules, that can be parsed from each modules's configuration page:
+# 一些模块中定义了其他指令，可以从每个模块的配置页面解析：
 # - https://www.php.net/manual/en/$book.configuration.php (book comes from funcref.php)
 #
-# As the source code is in docbook format with many dependencies, the easiest
-# way to get it is using an xpath parser on the ini list and getting all
+# As the source code is in docbook format with many dependencies, the easiest way to get it is using an xpath parser on the ini list and getting all
 # using '//table/tbody/tr/td[1]'. A simple helper tool you can use is https://www.videlibri.de/xidel.html
+# 由于源代码采用docbook格式且有许多依赖项，最简单的获取方法是在ini列表上使用xpath解析器，并使用'//table/tbody/tr/td[1]'获取所有内容。
+# 您可以使用一个简单的辅助工具https://www.videlibri.de/xidel.html。
 #
-# Small post-processing is needed to remove numbers coming from a column,
-# and `*` chars (e.g. `pdo.dsn.*`).
+# Small post-processing is needed to remove numbers coming from a column, and `*` chars (e.g. `pdo.dsn.*`).
 # Also removed single words like `engine`, `extension`, `from` and `precision`, to prevent FP.
+# 需要进行一些后处理，以删除来自列的数字和`*`字符（例如`pdo.dsn.*`）。
+# 同时，为防止误报，删除了诸如“engine”、“extension”、“from”和“precision”等单个词汇。
 #
 # Example usage:
 # `xidel https://www.php.net/manual/en/ini.core.php https://www.php.net/manual/en/ini.list.php --xpath '//table/tbody/tr/td[1]' | sort | uniq`
 #
-# And for configuration in submodules:
-#
+# 对于子模块中的配置：
 # for book in $(xidel  https://www.php.net/manual/en/funcref.php -e '//a/extract(@href, "book\.(.+)\.php", 1)[. != ""]')                                                                                                 ─╯
 # do
 #   xidel https://www.php.net/manual/en/$book.configuration.php --xpath '//table/tbody/tr/td[1]' >> php-config-directives.txt
 # done
 #
 # ** Remember to always `sort` the output so its easy to spot the changes, and remove duplicates if any.
+# 请记住始终对输出进行“排序”，以便于发现更改，并删除重复项（如果有）。
 
 allow_url_fopen
 allow_url_include
