@@ -35,3 +35,8 @@ XSS
 SQLi
 
 Session fixation
+
+Java
+    RCE
+    脚本上传
+    log4j

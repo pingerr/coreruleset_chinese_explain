@@ -10,13 +10,13 @@
 
 #
 # The purpose of this file is to hold LOCAL exceptions for your site.
-# The types of rules that would go into this file are one where you want
-# to unconditionally disable rules or modify their actions during startup.
+# The types of rules that would go into this file are one where you want to unconditionally disable rules or modify their actions during startup.
+# 该文件的目的是为您的网站保存本地例外情况。
+# 该文件中可能包括禁用规则或在启动期间修改其操作等无条件规则类型。
 #
-# Please see the file REQUEST-900-EXCLUSION-RULES-BEFORE-CRS.conf.example
-# for a description of the rule exclusions mechanism and the correct
+# Please see the file REQUEST-900-EXCLUSION-RULES-BEFORE-CRS.conf.example for a description of the rule exclusions mechanism and the correct
 # use of this file.
-#
+# 请查看文件REQUEST-900-EXCLUSION-RULES-BEFORE-CRS.conf.example，了解规则排除机制和正确使用本文件的描述。
 
 #
 # Example Exclusion Rule: To unconditionally disable a rule ID

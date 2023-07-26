@@ -1,17 +1,20 @@
-# This list contains patterns of various web shells, backdoors and similar
-# software written in PHP language. There is no way how to automatically update
-# this list, so it must be done by hand. Here is a recommended way how to add
-# new malicious software:
+# This list contains patterns of various web shells, backdoors and similar software written in PHP language.
+# 此清单包含各种用PHP语言编写的Web恶意软件，后门和类似软件的模式。
+# There is no way how to automatically update this list, so it must be done by hand.
+# 此列表无法自动更新，必须手动完成。
+# Here is a recommended way how to add new malicious software:
+# 这里有一种推荐的方法来添加新的恶意软件：
 # 1.) As patterns are matched against RESPONSE_BODY, you need to run a malicious
 #     software (ideally in an isolated environment) and catch the output.
-# 2.) In the output, search for static pattern unique enough to match only
-#     the software in question and to not do any FPs. The best pick is usually
+#     由于需要将模式与RESPONSE_BODY进行匹配，因此需要在恶意软件中运行代码（最好在隔离环境中），并截取输出结果。
+# 2.) In the output, search for static pattern unique enough to match only the software in question and to not do any FPs. The best pick is usually
 #     a part of HTML code with software name.
-# 3.) Include software name and URL (if available) in the comment above
-#     the pattern.
+#     在输出中，搜索足够独特的静态模式，仅匹配所涉及的软件而不造成任何误报。最佳选择通常是包含软件名称的HTML代码的一部分。
+# 3.) Include software name and URL (if available) in the comment above the pattern.
+#     在模式上方的评论中加入软件名称和URL（如果有的话）。
 #
-# Data comes from multiple places of which some doesn't work anymore. Few are
-# listed below:
+# Data comes from multiple places of which some doesn't work anymore. Few are listed below:
+# 数据来自多个地方，其中一些已经无法使用，以下是列出的少量来源：
 # - https://github.com/JohnTroony/php-webshells/tree/master/Collection
 # - https://www.localroot.net/
 # - Google search (keywords like webshells, php backdoor and similar)
